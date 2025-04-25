@@ -1,0 +1,2828 @@
+Router R1 LSDB:
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R2:
+    Path 1: cost=2, path=['R1', 'R2']
+  R3:
+    Path 1: cost=2, path=['R1', 'R3']
+  R4:
+    Path 1: cost=5, path=['R1', 'R2', 'R4']
+    Path 2: cost=5, path=['R1', 'R3', 'R4']
+  R5:
+    Path 1: cost=5, path=['R1', 'R5']
+    Path 2: cost=6, path=['R1', 'R2', 'R5']
+  R6:
+    Path 1: cost=6, path=['R1', 'R3', 'R6']
+    Path 2: cost=7, path=['R1', 'R5', 'R6']
+  R7:
+    Path 1: cost=7, path=['R1', 'R2', 'R4', 'R7']
+    Path 2: cost=8, path=['R1', 'R5', 'R7']
+  R8:
+    Path 1: cost=8, path=['R1', 'R2', 'R4', 'R7', 'R8']
+  R9:
+    Path 1: cost=10, path=['R1', 'R2', 'R4', 'R7', 'R8', 'R9']
+    Path 2: cost=11, path=['R1', 'R3', 'R6', 'R10', 'R9']
+  R10:
+    Path 1: cost=10, path=['R1', 'R3', 'R6', 'R10']
+    Path 2: cost=10, path=['R1', 'R2', 'R4', 'R7', 'R8', 'R10']
+  R11:
+    Path 1: cost=12, path=['R1', 'R3', 'R6', 'R10', 'R11']
+    Path 2: cost=12, path=['R1', 'R2', 'R4', 'R7', 'R8', 'R9', 'R11']
+  R12:
+    Path 1: cost=14, path=['R1', 'R3', 'R6', 'R10', 'R11', 'R12']
+  R13:
+    Path 1: cost=17, path=['R1', 'R3', 'R6', 'R10', 'R11', 'R12', 'R13']
+    Path 2: cost=19, path=['R1', 'R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R13']
+  R14:
+    Path 1: cost=17, path=['R1', 'R3', 'R6', 'R10', 'R11', 'R12', 'R14']
+    Path 2: cost=19, path=['R1', 'R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R14']
+  R15:
+    Path 1: cost=19, path=['R1', 'R3', 'R6', 'R10', 'R11', 'R12', 'R13', 'R15']
+    Path 2: cost=20, path=['R1', 'R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R15']
+  R16:
+    Path 1: cost=16, path=['R1', 'R3', 'R6', 'R10', 'R11', 'R16']
+  R17:
+    Path 1: cost=18, path=['R1', 'R3', 'R6', 'R10', 'R11', 'R16', 'R17']
+    Path 2: cost=21, path=['R1', 'R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R12', 'R13', 'R15', 'R17']
+  R18:
+    Path 1: cost=20, path=['R1', 'R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18']
+  R19:
+    Path 1: cost=21, path=['R1', 'R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R19']
+  R20:
+    Path 1: cost=22, path=['R1', 'R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20']
+    Path 2: cost=26, path=['R1', 'R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R12', 'R13', 'R15', 'R17', 'R19', 'R20']
+  R21:
+    Path 1: cost=24, path=['R1', 'R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21']
+  R22:
+    Path 1: cost=25, path=['R1', 'R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R19', 'R22']
+    Path 2: cost=29, path=['R1', 'R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R12', 'R13', 'R15', 'R17', 'R18', 'R20', 'R21', 'R22']
+  R23:
+    Path 1: cost=27, path=['R1', 'R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21', 'R23']
+    Path 2: cost=32, path=['R1', 'R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R12', 'R13', 'R15', 'R17', 'R19', 'R22', 'R24', 'R23']
+  R24:
+    Path 1: cost=27, path=['R1', 'R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R19', 'R22', 'R24']
+    Path 2: cost=32, path=['R1', 'R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R12', 'R13', 'R15', 'R17', 'R18', 'R20', 'R21', 'R23', 'R24']
+  R25:
+    Path 1: cost=27, path=['R1', 'R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25']
+  R26:
+    Path 1: cost=29, path=['R1', 'R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26']
+    Path 2: cost=33, path=['R1', 'R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R12', 'R13', 'R15', 'R17', 'R19', 'R20', 'R21', 'R23', 'R26']
+  R27:
+    Path 1: cost=31, path=['R1', 'R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=33, path=['R1', 'R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=34, path=['R1', 'R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=35, path=['R1', 'R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28', 'R30']
+Router R2 LSDB:
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=2, path=['R2', 'R1']
+  R3:
+    Path 1: cost=4, path=['R2', 'R1', 'R3']
+  R4:
+    Path 1: cost=3, path=['R2', 'R4']
+  R5:
+    Path 1: cost=4, path=['R2', 'R5']
+  R6:
+    Path 1: cost=6, path=['R2', 'R5', 'R6']
+  R7:
+    Path 1: cost=5, path=['R2', 'R4', 'R7']
+  R8:
+    Path 1: cost=6, path=['R2', 'R4', 'R7', 'R8']
+  R9:
+    Path 1: cost=8, path=['R2', 'R4', 'R7', 'R8', 'R9']
+  R10:
+    Path 1: cost=8, path=['R2', 'R4', 'R7', 'R8', 'R10']
+  R11:
+    Path 1: cost=10, path=['R2', 'R4', 'R7', 'R8', 'R9', 'R11']
+    Path 2: cost=12, path=['R2', 'R5', 'R6', 'R10', 'R11']
+  R12:
+    Path 1: cost=12, path=['R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R12']
+  R13:
+    Path 1: cost=15, path=['R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R12', 'R13']
+  R14:
+    Path 1: cost=15, path=['R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R12', 'R14']
+  R15:
+    Path 1: cost=17, path=['R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R12', 'R13', 'R15']
+    Path 2: cost=20, path=['R2', 'R5', 'R6', 'R10', 'R11', 'R16', 'R17', 'R15']
+  R16:
+    Path 1: cost=14, path=['R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16']
+  R17:
+    Path 1: cost=16, path=['R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17']
+  R18:
+    Path 1: cost=18, path=['R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18']
+  R19:
+    Path 1: cost=19, path=['R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R19']
+  R20:
+    Path 1: cost=20, path=['R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20']
+  R21:
+    Path 1: cost=22, path=['R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21']
+  R22:
+    Path 1: cost=23, path=['R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R19', 'R22']
+  R23:
+    Path 1: cost=25, path=['R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21', 'R23']
+  R24:
+    Path 1: cost=25, path=['R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R19', 'R22', 'R24']
+  R25:
+    Path 1: cost=25, path=['R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25']
+  R26:
+    Path 1: cost=27, path=['R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26']
+  R27:
+    Path 1: cost=29, path=['R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=31, path=['R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=32, path=['R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=33, path=['R2', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28', 'R30']
+Router R3 LSDB:
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=2, path=['R3', 'R1']
+  R2:
+    Path 1: cost=4, path=['R3', 'R1', 'R2']
+  R4:
+    Path 1: cost=3, path=['R3', 'R4']
+  R5:
+    Path 1: cost=6, path=['R3', 'R6', 'R5']
+    Path 2: cost=7, path=['R3', 'R1', 'R5']
+  R6:
+    Path 1: cost=4, path=['R3', 'R6']
+  R7:
+    Path 1: cost=5, path=['R3', 'R4', 'R7']
+  R8:
+    Path 1: cost=6, path=['R3', 'R4', 'R7', 'R8']
+  R9:
+    Path 1: cost=8, path=['R3', 'R4', 'R7', 'R8', 'R9']
+    Path 2: cost=9, path=['R3', 'R6', 'R10', 'R9']
+  R10:
+    Path 1: cost=8, path=['R3', 'R6', 'R10']
+    Path 2: cost=8, path=['R3', 'R4', 'R7', 'R8', 'R10']
+  R11:
+    Path 1: cost=10, path=['R3', 'R6', 'R10', 'R11']
+    Path 2: cost=10, path=['R3', 'R4', 'R7', 'R8', 'R9', 'R11']
+  R12:
+    Path 1: cost=12, path=['R3', 'R6', 'R10', 'R11', 'R12']
+  R13:
+    Path 1: cost=15, path=['R3', 'R6', 'R10', 'R11', 'R12', 'R13']
+    Path 2: cost=17, path=['R3', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R13']
+  R14:
+    Path 1: cost=15, path=['R3', 'R6', 'R10', 'R11', 'R12', 'R14']
+    Path 2: cost=17, path=['R3', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R14']
+  R15:
+    Path 1: cost=17, path=['R3', 'R6', 'R10', 'R11', 'R12', 'R13', 'R15']
+    Path 2: cost=18, path=['R3', 'R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R15']
+  R16:
+    Path 1: cost=14, path=['R3', 'R6', 'R10', 'R11', 'R16']
+  R17:
+    Path 1: cost=16, path=['R3', 'R6', 'R10', 'R11', 'R16', 'R17']
+    Path 2: cost=19, path=['R3', 'R4', 'R7', 'R8', 'R9', 'R11', 'R12', 'R13', 'R15', 'R17']
+  R18:
+    Path 1: cost=18, path=['R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18']
+  R19:
+    Path 1: cost=19, path=['R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R19']
+  R20:
+    Path 1: cost=20, path=['R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20']
+    Path 2: cost=24, path=['R3', 'R4', 'R7', 'R8', 'R9', 'R11', 'R12', 'R13', 'R15', 'R17', 'R19', 'R20']
+  R21:
+    Path 1: cost=22, path=['R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21']
+  R22:
+    Path 1: cost=23, path=['R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R19', 'R22']
+    Path 2: cost=27, path=['R3', 'R4', 'R7', 'R8', 'R9', 'R11', 'R12', 'R13', 'R15', 'R17', 'R18', 'R20', 'R21', 'R22']
+  R23:
+    Path 1: cost=25, path=['R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21', 'R23']
+    Path 2: cost=30, path=['R3', 'R4', 'R7', 'R8', 'R9', 'R11', 'R12', 'R13', 'R15', 'R17', 'R19', 'R22', 'R24', 'R23']
+  R24:
+    Path 1: cost=25, path=['R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R19', 'R22', 'R24']
+    Path 2: cost=30, path=['R3', 'R4', 'R7', 'R8', 'R9', 'R11', 'R12', 'R13', 'R15', 'R17', 'R18', 'R20', 'R21', 'R23', 'R24']
+  R25:
+    Path 1: cost=25, path=['R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25']
+  R26:
+    Path 1: cost=27, path=['R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26']
+    Path 2: cost=31, path=['R3', 'R4', 'R7', 'R8', 'R9', 'R11', 'R12', 'R13', 'R15', 'R17', 'R19', 'R20', 'R21', 'R23', 'R26']
+  R27:
+    Path 1: cost=29, path=['R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=31, path=['R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=32, path=['R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=33, path=['R3', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28', 'R30']
+Router R4 LSDB:
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=5, path=['R4', 'R2', 'R1']
+    Path 2: cost=5, path=['R4', 'R3', 'R1']
+  R2:
+    Path 1: cost=3, path=['R4', 'R2']
+  R3:
+    Path 1: cost=3, path=['R4', 'R3']
+  R5:
+    Path 1: cost=5, path=['R4', 'R7', 'R5']
+  R6:
+    Path 1: cost=5, path=['R4', 'R7', 'R6']
+  R7:
+    Path 1: cost=2, path=['R4', 'R7']
+  R8:
+    Path 1: cost=3, path=['R4', 'R7', 'R8']
+  R9:
+    Path 1: cost=5, path=['R4', 'R7', 'R8', 'R9']
+  R10:
+    Path 1: cost=5, path=['R4', 'R7', 'R8', 'R10']
+  R11:
+    Path 1: cost=7, path=['R4', 'R7', 'R8', 'R9', 'R11']
+  R12:
+    Path 1: cost=9, path=['R4', 'R7', 'R8', 'R9', 'R11', 'R12']
+  R13:
+    Path 1: cost=12, path=['R4', 'R7', 'R8', 'R9', 'R11', 'R12', 'R13']
+  R14:
+    Path 1: cost=12, path=['R4', 'R7', 'R8', 'R9', 'R11', 'R12', 'R14']
+  R15:
+    Path 1: cost=14, path=['R4', 'R7', 'R8', 'R9', 'R11', 'R12', 'R13', 'R15']
+  R16:
+    Path 1: cost=11, path=['R4', 'R7', 'R8', 'R9', 'R11', 'R16']
+  R17:
+    Path 1: cost=13, path=['R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17']
+  R18:
+    Path 1: cost=15, path=['R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18']
+  R19:
+    Path 1: cost=16, path=['R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R19']
+  R20:
+    Path 1: cost=17, path=['R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20']
+  R21:
+    Path 1: cost=19, path=['R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21']
+  R22:
+    Path 1: cost=20, path=['R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R19', 'R22']
+  R23:
+    Path 1: cost=22, path=['R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21', 'R23']
+  R24:
+    Path 1: cost=22, path=['R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R19', 'R22', 'R24']
+  R25:
+    Path 1: cost=22, path=['R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25']
+  R26:
+    Path 1: cost=24, path=['R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26']
+  R27:
+    Path 1: cost=26, path=['R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=28, path=['R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=29, path=['R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=30, path=['R4', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28', 'R30']
+Router R5 LSDB:
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=5, path=['R5', 'R1']
+    Path 2: cost=6, path=['R5', 'R2', 'R1']
+  R2:
+    Path 1: cost=4, path=['R5', 'R2']
+  R3:
+    Path 1: cost=6, path=['R5', 'R6', 'R3']
+    Path 2: cost=7, path=['R5', 'R1', 'R3']
+  R4:
+    Path 1: cost=5, path=['R5', 'R7', 'R4']
+  R6:
+    Path 1: cost=2, path=['R5', 'R6']
+  R7:
+    Path 1: cost=3, path=['R5', 'R7']
+  R8:
+    Path 1: cost=4, path=['R5', 'R7', 'R8']
+  R9:
+    Path 1: cost=6, path=['R5', 'R7', 'R8', 'R9']
+    Path 2: cost=7, path=['R5', 'R6', 'R10', 'R9']
+  R10:
+    Path 1: cost=6, path=['R5', 'R6', 'R10']
+    Path 2: cost=6, path=['R5', 'R7', 'R8', 'R10']
+  R11:
+    Path 1: cost=8, path=['R5', 'R6', 'R10', 'R11']
+    Path 2: cost=8, path=['R5', 'R7', 'R8', 'R9', 'R11']
+  R12:
+    Path 1: cost=10, path=['R5', 'R6', 'R10', 'R11', 'R12']
+  R13:
+    Path 1: cost=13, path=['R5', 'R6', 'R10', 'R11', 'R12', 'R13']
+    Path 2: cost=15, path=['R5', 'R7', 'R8', 'R9', 'R11', 'R16', 'R13']
+  R14:
+    Path 1: cost=13, path=['R5', 'R6', 'R10', 'R11', 'R12', 'R14']
+    Path 2: cost=15, path=['R5', 'R7', 'R8', 'R9', 'R11', 'R16', 'R14']
+  R15:
+    Path 1: cost=15, path=['R5', 'R6', 'R10', 'R11', 'R12', 'R13', 'R15']
+    Path 2: cost=16, path=['R5', 'R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R15']
+  R16:
+    Path 1: cost=12, path=['R5', 'R6', 'R10', 'R11', 'R16']
+  R17:
+    Path 1: cost=14, path=['R5', 'R6', 'R10', 'R11', 'R16', 'R17']
+  R18:
+    Path 1: cost=16, path=['R5', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18']
+  R19:
+    Path 1: cost=17, path=['R5', 'R6', 'R10', 'R11', 'R16', 'R17', 'R19']
+  R20:
+    Path 1: cost=18, path=['R5', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20']
+  R21:
+    Path 1: cost=20, path=['R5', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21']
+  R22:
+    Path 1: cost=21, path=['R5', 'R6', 'R10', 'R11', 'R16', 'R17', 'R19', 'R22']
+    Path 2: cost=25, path=['R5', 'R7', 'R8', 'R9', 'R11', 'R12', 'R13', 'R15', 'R17', 'R18', 'R20', 'R21', 'R22']
+  R23:
+    Path 1: cost=23, path=['R5', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21', 'R23']
+  R24:
+    Path 1: cost=23, path=['R5', 'R6', 'R10', 'R11', 'R16', 'R17', 'R19', 'R22', 'R24']
+  R25:
+    Path 1: cost=23, path=['R5', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25']
+  R26:
+    Path 1: cost=25, path=['R5', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26']
+    Path 2: cost=29, path=['R5', 'R7', 'R8', 'R9', 'R11', 'R12', 'R13', 'R15', 'R17', 'R19', 'R20', 'R21', 'R23', 'R26']
+  R27:
+    Path 1: cost=27, path=['R5', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=29, path=['R5', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=30, path=['R5', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=31, path=['R5', 'R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28', 'R30']
+Router R6 LSDB:
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=6, path=['R6', 'R3', 'R1']
+    Path 2: cost=7, path=['R6', 'R5', 'R1']
+  R2:
+    Path 1: cost=6, path=['R6', 'R5', 'R2']
+  R3:
+    Path 1: cost=4, path=['R6', 'R3']
+  R4:
+    Path 1: cost=5, path=['R6', 'R7', 'R4']
+  R5:
+    Path 1: cost=2, path=['R6', 'R5']
+  R7:
+    Path 1: cost=3, path=['R6', 'R7']
+  R8:
+    Path 1: cost=4, path=['R6', 'R7', 'R8']
+  R9:
+    Path 1: cost=5, path=['R6', 'R10', 'R9']
+    Path 2: cost=6, path=['R6', 'R7', 'R8', 'R9']
+  R10:
+    Path 1: cost=4, path=['R6', 'R10']
+  R11:
+    Path 1: cost=6, path=['R6', 'R10', 'R11']
+  R12:
+    Path 1: cost=8, path=['R6', 'R10', 'R11', 'R12']
+  R13:
+    Path 1: cost=11, path=['R6', 'R10', 'R11', 'R12', 'R13']
+  R14:
+    Path 1: cost=11, path=['R6', 'R10', 'R11', 'R12', 'R14']
+  R15:
+    Path 1: cost=13, path=['R6', 'R10', 'R11', 'R12', 'R13', 'R15']
+  R16:
+    Path 1: cost=10, path=['R6', 'R10', 'R11', 'R16']
+  R17:
+    Path 1: cost=12, path=['R6', 'R10', 'R11', 'R16', 'R17']
+  R18:
+    Path 1: cost=14, path=['R6', 'R10', 'R11', 'R16', 'R17', 'R18']
+  R19:
+    Path 1: cost=15, path=['R6', 'R10', 'R11', 'R16', 'R17', 'R19']
+  R20:
+    Path 1: cost=16, path=['R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20']
+  R21:
+    Path 1: cost=18, path=['R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21']
+  R22:
+    Path 1: cost=19, path=['R6', 'R10', 'R11', 'R16', 'R17', 'R19', 'R22']
+  R23:
+    Path 1: cost=21, path=['R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21', 'R23']
+  R24:
+    Path 1: cost=21, path=['R6', 'R10', 'R11', 'R16', 'R17', 'R19', 'R22', 'R24']
+  R25:
+    Path 1: cost=21, path=['R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25']
+  R26:
+    Path 1: cost=23, path=['R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26']
+  R27:
+    Path 1: cost=25, path=['R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=27, path=['R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=28, path=['R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=29, path=['R6', 'R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28', 'R30']
+Router R7 LSDB:
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=7, path=['R7', 'R4', 'R2', 'R1']
+    Path 2: cost=8, path=['R7', 'R5', 'R1']
+  R2:
+    Path 1: cost=5, path=['R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=5, path=['R7', 'R4', 'R3']
+  R4:
+    Path 1: cost=2, path=['R7', 'R4']
+  R5:
+    Path 1: cost=3, path=['R7', 'R5']
+  R6:
+    Path 1: cost=3, path=['R7', 'R6']
+  R8:
+    Path 1: cost=1, path=['R7', 'R8']
+  R9:
+    Path 1: cost=3, path=['R7', 'R8', 'R9']
+  R10:
+    Path 1: cost=3, path=['R7', 'R8', 'R10']
+  R11:
+    Path 1: cost=5, path=['R7', 'R8', 'R9', 'R11']
+  R12:
+    Path 1: cost=7, path=['R7', 'R8', 'R9', 'R11', 'R12']
+  R13:
+    Path 1: cost=10, path=['R7', 'R8', 'R9', 'R11', 'R12', 'R13']
+  R14:
+    Path 1: cost=10, path=['R7', 'R8', 'R9', 'R11', 'R12', 'R14']
+  R15:
+    Path 1: cost=12, path=['R7', 'R8', 'R9', 'R11', 'R12', 'R13', 'R15']
+  R16:
+    Path 1: cost=9, path=['R7', 'R8', 'R9', 'R11', 'R16']
+  R17:
+    Path 1: cost=11, path=['R7', 'R8', 'R9', 'R11', 'R16', 'R17']
+  R18:
+    Path 1: cost=13, path=['R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18']
+  R19:
+    Path 1: cost=14, path=['R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R19']
+  R20:
+    Path 1: cost=15, path=['R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20']
+  R21:
+    Path 1: cost=17, path=['R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21']
+  R22:
+    Path 1: cost=18, path=['R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R19', 'R22']
+  R23:
+    Path 1: cost=20, path=['R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21', 'R23']
+  R24:
+    Path 1: cost=20, path=['R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R19', 'R22', 'R24']
+  R25:
+    Path 1: cost=20, path=['R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25']
+  R26:
+    Path 1: cost=22, path=['R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26']
+  R27:
+    Path 1: cost=24, path=['R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=26, path=['R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=27, path=['R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=28, path=['R7', 'R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28', 'R30']
+Router R8 LSDB:
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=8, path=['R8', 'R7', 'R4', 'R2', 'R1']
+  R2:
+    Path 1: cost=6, path=['R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=6, path=['R8', 'R7', 'R4', 'R3']
+  R4:
+    Path 1: cost=3, path=['R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=4, path=['R8', 'R7', 'R5']
+  R6:
+    Path 1: cost=4, path=['R8', 'R7', 'R6']
+  R7:
+    Path 1: cost=1, path=['R8', 'R7']
+  R9:
+    Path 1: cost=2, path=['R8', 'R9']
+  R10:
+    Path 1: cost=2, path=['R8', 'R10']
+  R11:
+    Path 1: cost=4, path=['R8', 'R9', 'R11']
+    Path 2: cost=4, path=['R8', 'R10', 'R11']
+  R12:
+    Path 1: cost=6, path=['R8', 'R9', 'R11', 'R12']
+  R13:
+    Path 1: cost=9, path=['R8', 'R9', 'R11', 'R12', 'R13']
+  R14:
+    Path 1: cost=9, path=['R8', 'R9', 'R11', 'R12', 'R14']
+  R15:
+    Path 1: cost=11, path=['R8', 'R9', 'R11', 'R12', 'R13', 'R15']
+    Path 2: cost=12, path=['R8', 'R10', 'R11', 'R16', 'R17', 'R15']
+  R16:
+    Path 1: cost=8, path=['R8', 'R9', 'R11', 'R16']
+  R17:
+    Path 1: cost=10, path=['R8', 'R9', 'R11', 'R16', 'R17']
+  R18:
+    Path 1: cost=12, path=['R8', 'R9', 'R11', 'R16', 'R17', 'R18']
+  R19:
+    Path 1: cost=13, path=['R8', 'R9', 'R11', 'R16', 'R17', 'R19']
+  R20:
+    Path 1: cost=14, path=['R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20']
+  R21:
+    Path 1: cost=16, path=['R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21']
+  R22:
+    Path 1: cost=17, path=['R8', 'R9', 'R11', 'R16', 'R17', 'R19', 'R22']
+  R23:
+    Path 1: cost=19, path=['R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21', 'R23']
+  R24:
+    Path 1: cost=19, path=['R8', 'R9', 'R11', 'R16', 'R17', 'R19', 'R22', 'R24']
+  R25:
+    Path 1: cost=19, path=['R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25']
+  R26:
+    Path 1: cost=21, path=['R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26']
+    Path 2: cost=25, path=['R8', 'R10', 'R11', 'R12', 'R13', 'R15', 'R17', 'R19', 'R20', 'R21', 'R23', 'R26']
+  R27:
+    Path 1: cost=23, path=['R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=25, path=['R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=26, path=['R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=27, path=['R8', 'R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28', 'R30']
+Router R9 LSDB:
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=10, path=['R9', 'R8', 'R7', 'R4', 'R2', 'R1']
+    Path 2: cost=11, path=['R9', 'R10', 'R6', 'R3', 'R1']
+  R2:
+    Path 1: cost=8, path=['R9', 'R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=8, path=['R9', 'R8', 'R7', 'R4', 'R3']
+    Path 2: cost=9, path=['R9', 'R10', 'R6', 'R3']
+  R4:
+    Path 1: cost=5, path=['R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=6, path=['R9', 'R8', 'R7', 'R5']
+    Path 2: cost=7, path=['R9', 'R10', 'R6', 'R5']
+  R6:
+    Path 1: cost=5, path=['R9', 'R10', 'R6']
+    Path 2: cost=6, path=['R9', 'R8', 'R7', 'R6']
+  R7:
+    Path 1: cost=3, path=['R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=2, path=['R9', 'R8']
+  R10:
+    Path 1: cost=1, path=['R9', 'R10']
+  R11:
+    Path 1: cost=2, path=['R9', 'R11']
+  R12:
+    Path 1: cost=4, path=['R9', 'R11', 'R12']
+  R13:
+    Path 1: cost=7, path=['R9', 'R11', 'R12', 'R13']
+  R14:
+    Path 1: cost=7, path=['R9', 'R11', 'R12', 'R14']
+  R15:
+    Path 1: cost=9, path=['R9', 'R11', 'R12', 'R13', 'R15']
+  R16:
+    Path 1: cost=6, path=['R9', 'R11', 'R16']
+  R17:
+    Path 1: cost=8, path=['R9', 'R11', 'R16', 'R17']
+  R18:
+    Path 1: cost=10, path=['R9', 'R11', 'R16', 'R17', 'R18']
+  R19:
+    Path 1: cost=11, path=['R9', 'R11', 'R16', 'R17', 'R19']
+  R20:
+    Path 1: cost=12, path=['R9', 'R11', 'R16', 'R17', 'R18', 'R20']
+  R21:
+    Path 1: cost=14, path=['R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21']
+  R22:
+    Path 1: cost=15, path=['R9', 'R11', 'R16', 'R17', 'R19', 'R22']
+  R23:
+    Path 1: cost=17, path=['R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21', 'R23']
+  R24:
+    Path 1: cost=17, path=['R9', 'R11', 'R16', 'R17', 'R19', 'R22', 'R24']
+  R25:
+    Path 1: cost=17, path=['R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25']
+  R26:
+    Path 1: cost=19, path=['R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26']
+  R27:
+    Path 1: cost=21, path=['R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=23, path=['R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=24, path=['R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=25, path=['R9', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28', 'R30']
+Router R10 LSDB:
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=10, path=['R10', 'R6', 'R3', 'R1']
+    Path 2: cost=10, path=['R10', 'R8', 'R7', 'R4', 'R2', 'R1']
+  R2:
+    Path 1: cost=8, path=['R10', 'R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=8, path=['R10', 'R6', 'R3']
+    Path 2: cost=8, path=['R10', 'R8', 'R7', 'R4', 'R3']
+  R4:
+    Path 1: cost=5, path=['R10', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=6, path=['R10', 'R8', 'R7', 'R5']
+    Path 2: cost=6, path=['R10', 'R6', 'R5']
+  R6:
+    Path 1: cost=4, path=['R10', 'R6']
+  R7:
+    Path 1: cost=3, path=['R10', 'R8', 'R7']
+  R8:
+    Path 1: cost=2, path=['R10', 'R8']
+  R9:
+    Path 1: cost=1, path=['R10', 'R9']
+  R11:
+    Path 1: cost=2, path=['R10', 'R11']
+  R12:
+    Path 1: cost=4, path=['R10', 'R11', 'R12']
+  R13:
+    Path 1: cost=7, path=['R10', 'R11', 'R12', 'R13']
+  R14:
+    Path 1: cost=7, path=['R10', 'R11', 'R12', 'R14']
+  R15:
+    Path 1: cost=9, path=['R10', 'R11', 'R12', 'R13', 'R15']
+  R16:
+    Path 1: cost=6, path=['R10', 'R11', 'R16']
+  R17:
+    Path 1: cost=8, path=['R10', 'R11', 'R16', 'R17']
+  R18:
+    Path 1: cost=10, path=['R10', 'R11', 'R16', 'R17', 'R18']
+  R19:
+    Path 1: cost=11, path=['R10', 'R11', 'R16', 'R17', 'R19']
+  R20:
+    Path 1: cost=12, path=['R10', 'R11', 'R16', 'R17', 'R18', 'R20']
+  R21:
+    Path 1: cost=14, path=['R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21']
+  R22:
+    Path 1: cost=15, path=['R10', 'R11', 'R16', 'R17', 'R19', 'R22']
+  R23:
+    Path 1: cost=17, path=['R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21', 'R23']
+  R24:
+    Path 1: cost=17, path=['R10', 'R11', 'R16', 'R17', 'R19', 'R22', 'R24']
+  R25:
+    Path 1: cost=17, path=['R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25']
+  R26:
+    Path 1: cost=19, path=['R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26']
+  R27:
+    Path 1: cost=21, path=['R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=23, path=['R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=24, path=['R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=25, path=['R10', 'R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28', 'R30']
+Router R11 LSDB:
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=12, path=['R11', 'R10', 'R6', 'R3', 'R1']
+    Path 2: cost=12, path=['R11', 'R9', 'R8', 'R7', 'R4', 'R2', 'R1']
+  R2:
+    Path 1: cost=10, path=['R11', 'R9', 'R8', 'R7', 'R4', 'R2']
+    Path 2: cost=12, path=['R11', 'R10', 'R6', 'R5', 'R2']
+  R3:
+    Path 1: cost=10, path=['R11', 'R10', 'R6', 'R3']
+    Path 2: cost=10, path=['R11', 'R9', 'R8', 'R7', 'R4', 'R3']
+  R4:
+    Path 1: cost=7, path=['R11', 'R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=8, path=['R11', 'R9', 'R8', 'R7', 'R5']
+    Path 2: cost=8, path=['R11', 'R10', 'R6', 'R5']
+  R6:
+    Path 1: cost=6, path=['R11', 'R10', 'R6']
+  R7:
+    Path 1: cost=5, path=['R11', 'R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=4, path=['R11', 'R9', 'R8']
+    Path 2: cost=4, path=['R11', 'R10', 'R8']
+  R9:
+    Path 1: cost=2, path=['R11', 'R9']
+  R10:
+    Path 1: cost=2, path=['R11', 'R10']
+  R12:
+    Path 1: cost=2, path=['R11', 'R12']
+  R13:
+    Path 1: cost=5, path=['R11', 'R12', 'R13']
+  R14:
+    Path 1: cost=5, path=['R11', 'R12', 'R14']
+  R15:
+    Path 1: cost=7, path=['R11', 'R12', 'R13', 'R15']
+    Path 2: cost=8, path=['R11', 'R16', 'R17', 'R15']
+  R16:
+    Path 1: cost=4, path=['R11', 'R16']
+  R17:
+    Path 1: cost=6, path=['R11', 'R16', 'R17']
+  R18:
+    Path 1: cost=8, path=['R11', 'R16', 'R17', 'R18']
+  R19:
+    Path 1: cost=9, path=['R11', 'R16', 'R17', 'R19']
+  R20:
+    Path 1: cost=10, path=['R11', 'R16', 'R17', 'R18', 'R20']
+  R21:
+    Path 1: cost=12, path=['R11', 'R16', 'R17', 'R18', 'R20', 'R21']
+  R22:
+    Path 1: cost=13, path=['R11', 'R16', 'R17', 'R19', 'R22']
+  R23:
+    Path 1: cost=15, path=['R11', 'R16', 'R17', 'R18', 'R20', 'R21', 'R23']
+  R24:
+    Path 1: cost=15, path=['R11', 'R16', 'R17', 'R19', 'R22', 'R24']
+  R25:
+    Path 1: cost=15, path=['R11', 'R16', 'R17', 'R18', 'R20', 'R25']
+  R26:
+    Path 1: cost=17, path=['R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26']
+  R27:
+    Path 1: cost=19, path=['R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=21, path=['R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=22, path=['R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=23, path=['R11', 'R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28', 'R30']
+Router R12 LSDB:
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=14, path=['R12', 'R11', 'R10', 'R6', 'R3', 'R1']
+  R2:
+    Path 1: cost=12, path=['R12', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=12, path=['R12', 'R11', 'R10', 'R6', 'R3']
+  R4:
+    Path 1: cost=9, path=['R12', 'R11', 'R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=10, path=['R12', 'R11', 'R9', 'R8', 'R7', 'R5']
+  R6:
+    Path 1: cost=8, path=['R12', 'R11', 'R10', 'R6']
+  R7:
+    Path 1: cost=7, path=['R12', 'R11', 'R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=6, path=['R12', 'R11', 'R9', 'R8']
+  R9:
+    Path 1: cost=4, path=['R12', 'R11', 'R9']
+  R10:
+    Path 1: cost=4, path=['R12', 'R11', 'R10']
+  R11:
+    Path 1: cost=2, path=['R12', 'R11']
+  R13:
+    Path 1: cost=3, path=['R12', 'R13']
+  R14:
+    Path 1: cost=3, path=['R12', 'R14']
+  R15:
+    Path 1: cost=5, path=['R12', 'R13', 'R15']
+    Path 2: cost=5, path=['R12', 'R14', 'R15']
+  R16:
+    Path 1: cost=6, path=['R12', 'R11', 'R16']
+    Path 2: cost=6, path=['R12', 'R13', 'R16']
+    Path 3: cost=6, path=['R12', 'R14', 'R16']
+  R17:
+    Path 1: cost=7, path=['R12', 'R13', 'R15', 'R17']
+    Path 2: cost=8, path=['R12', 'R11', 'R16', 'R17']
+  R18:
+    Path 1: cost=9, path=['R12', 'R13', 'R15', 'R17', 'R18']
+  R19:
+    Path 1: cost=10, path=['R12', 'R13', 'R15', 'R17', 'R19']
+  R20:
+    Path 1: cost=11, path=['R12', 'R13', 'R15', 'R17', 'R18', 'R20']
+    Path 2: cost=13, path=['R12', 'R11', 'R16', 'R17', 'R19', 'R20']
+  R21:
+    Path 1: cost=13, path=['R12', 'R13', 'R15', 'R17', 'R18', 'R20', 'R21']
+  R22:
+    Path 1: cost=14, path=['R12', 'R13', 'R15', 'R17', 'R19', 'R22']
+    Path 2: cost=16, path=['R12', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21', 'R22']
+  R23:
+    Path 1: cost=16, path=['R12', 'R13', 'R15', 'R17', 'R18', 'R20', 'R21', 'R23']
+    Path 2: cost=19, path=['R12', 'R11', 'R16', 'R17', 'R19', 'R22', 'R24', 'R23']
+  R24:
+    Path 1: cost=16, path=['R12', 'R13', 'R15', 'R17', 'R19', 'R22', 'R24']
+    Path 2: cost=19, path=['R12', 'R11', 'R16', 'R17', 'R18', 'R20', 'R21', 'R23', 'R24']
+  R25:
+    Path 1: cost=16, path=['R12', 'R13', 'R15', 'R17', 'R18', 'R20', 'R25']
+  R26:
+    Path 1: cost=18, path=['R12', 'R13', 'R15', 'R17', 'R18', 'R20', 'R25', 'R26']
+    Path 2: cost=20, path=['R12', 'R11', 'R16', 'R17', 'R19', 'R20', 'R21', 'R23', 'R26']
+  R27:
+    Path 1: cost=20, path=['R12', 'R13', 'R15', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=22, path=['R12', 'R13', 'R15', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=23, path=['R12', 'R13', 'R15', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=24, path=['R12', 'R13', 'R15', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28', 'R30']
+Router R13 LSDB:
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=17, path=['R13', 'R12', 'R11', 'R10', 'R6', 'R3', 'R1']
+    Path 2: cost=19, path=['R13', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2', 'R1']
+  R2:
+    Path 1: cost=15, path=['R13', 'R12', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=15, path=['R13', 'R12', 'R11', 'R10', 'R6', 'R3']
+    Path 2: cost=17, path=['R13', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R3']
+  R4:
+    Path 1: cost=12, path=['R13', 'R12', 'R11', 'R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=13, path=['R13', 'R12', 'R11', 'R9', 'R8', 'R7', 'R5']
+    Path 2: cost=15, path=['R13', 'R16', 'R11', 'R10', 'R6', 'R5']
+  R6:
+    Path 1: cost=11, path=['R13', 'R12', 'R11', 'R10', 'R6']
+  R7:
+    Path 1: cost=10, path=['R13', 'R12', 'R11', 'R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=9, path=['R13', 'R12', 'R11', 'R9', 'R8']
+  R9:
+    Path 1: cost=7, path=['R13', 'R12', 'R11', 'R9']
+  R10:
+    Path 1: cost=7, path=['R13', 'R12', 'R11', 'R10']
+  R11:
+    Path 1: cost=5, path=['R13', 'R12', 'R11']
+  R12:
+    Path 1: cost=3, path=['R13', 'R12']
+  R14:
+    Path 1: cost=4, path=['R13', 'R15', 'R14']
+  R15:
+    Path 1: cost=2, path=['R13', 'R15']
+  R16:
+    Path 1: cost=3, path=['R13', 'R16']
+  R17:
+    Path 1: cost=4, path=['R13', 'R15', 'R17']
+  R18:
+    Path 1: cost=6, path=['R13', 'R15', 'R17', 'R18']
+  R19:
+    Path 1: cost=7, path=['R13', 'R15', 'R17', 'R19']
+  R20:
+    Path 1: cost=8, path=['R13', 'R15', 'R17', 'R18', 'R20']
+  R21:
+    Path 1: cost=10, path=['R13', 'R15', 'R17', 'R18', 'R20', 'R21']
+  R22:
+    Path 1: cost=11, path=['R13', 'R15', 'R17', 'R19', 'R22']
+    Path 2: cost=13, path=['R13', 'R16', 'R17', 'R18', 'R20', 'R21', 'R22']
+  R23:
+    Path 1: cost=13, path=['R13', 'R15', 'R17', 'R18', 'R20', 'R21', 'R23']
+  R24:
+    Path 1: cost=13, path=['R13', 'R15', 'R17', 'R19', 'R22', 'R24']
+  R25:
+    Path 1: cost=13, path=['R13', 'R15', 'R17', 'R18', 'R20', 'R25']
+  R26:
+    Path 1: cost=15, path=['R13', 'R15', 'R17', 'R18', 'R20', 'R25', 'R26']
+    Path 2: cost=17, path=['R13', 'R16', 'R17', 'R19', 'R20', 'R21', 'R23', 'R26']
+  R27:
+    Path 1: cost=17, path=['R13', 'R15', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=19, path=['R13', 'R15', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=20, path=['R13', 'R15', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=21, path=['R13', 'R15', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28', 'R30']
+Router R14 LSDB:
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=17, path=['R14', 'R12', 'R11', 'R10', 'R6', 'R3', 'R1']
+    Path 2: cost=19, path=['R14', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2', 'R1']
+  R2:
+    Path 1: cost=15, path=['R14', 'R12', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=15, path=['R14', 'R12', 'R11', 'R10', 'R6', 'R3']
+    Path 2: cost=17, path=['R14', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R3']
+  R4:
+    Path 1: cost=12, path=['R14', 'R12', 'R11', 'R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=13, path=['R14', 'R12', 'R11', 'R9', 'R8', 'R7', 'R5']
+    Path 2: cost=15, path=['R14', 'R16', 'R11', 'R10', 'R6', 'R5']
+  R6:
+    Path 1: cost=11, path=['R14', 'R12', 'R11', 'R10', 'R6']
+  R7:
+    Path 1: cost=10, path=['R14', 'R12', 'R11', 'R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=9, path=['R14', 'R12', 'R11', 'R9', 'R8']
+  R9:
+    Path 1: cost=7, path=['R14', 'R12', 'R11', 'R9']
+  R10:
+    Path 1: cost=7, path=['R14', 'R12', 'R11', 'R10']
+  R11:
+    Path 1: cost=5, path=['R14', 'R12', 'R11']
+  R12:
+    Path 1: cost=3, path=['R14', 'R12']
+  R13:
+    Path 1: cost=4, path=['R14', 'R15', 'R13']
+  R15:
+    Path 1: cost=2, path=['R14', 'R15']
+  R16:
+    Path 1: cost=3, path=['R14', 'R16']
+  R17:
+    Path 1: cost=4, path=['R14', 'R15', 'R17']
+  R18:
+    Path 1: cost=6, path=['R14', 'R15', 'R17', 'R18']
+  R19:
+    Path 1: cost=7, path=['R14', 'R15', 'R17', 'R19']
+  R20:
+    Path 1: cost=8, path=['R14', 'R15', 'R17', 'R18', 'R20']
+  R21:
+    Path 1: cost=10, path=['R14', 'R15', 'R17', 'R18', 'R20', 'R21']
+  R22:
+    Path 1: cost=11, path=['R14', 'R15', 'R17', 'R19', 'R22']
+    Path 2: cost=13, path=['R14', 'R16', 'R17', 'R18', 'R20', 'R21', 'R22']
+  R23:
+    Path 1: cost=13, path=['R14', 'R15', 'R17', 'R18', 'R20', 'R21', 'R23']
+  R24:
+    Path 1: cost=13, path=['R14', 'R15', 'R17', 'R19', 'R22', 'R24']
+  R25:
+    Path 1: cost=13, path=['R14', 'R15', 'R17', 'R18', 'R20', 'R25']
+  R26:
+    Path 1: cost=15, path=['R14', 'R15', 'R17', 'R18', 'R20', 'R25', 'R26']
+    Path 2: cost=17, path=['R14', 'R16', 'R17', 'R19', 'R20', 'R21', 'R23', 'R26']
+  R27:
+    Path 1: cost=17, path=['R14', 'R15', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=19, path=['R14', 'R15', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=20, path=['R14', 'R15', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=21, path=['R14', 'R15', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28', 'R30']
+Router R15 LSDB:
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=19, path=['R15', 'R13', 'R12', 'R11', 'R10', 'R6', 'R3', 'R1']
+    Path 2: cost=20, path=['R15', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2', 'R1']
+  R2:
+    Path 1: cost=17, path=['R15', 'R13', 'R12', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2']
+    Path 2: cost=20, path=['R15', 'R17', 'R16', 'R11', 'R10', 'R6', 'R5', 'R2']
+  R3:
+    Path 1: cost=17, path=['R15', 'R13', 'R12', 'R11', 'R10', 'R6', 'R3']
+    Path 2: cost=18, path=['R15', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R3']
+  R4:
+    Path 1: cost=14, path=['R15', 'R13', 'R12', 'R11', 'R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=15, path=['R15', 'R13', 'R12', 'R11', 'R9', 'R8', 'R7', 'R5']
+    Path 2: cost=16, path=['R15', 'R17', 'R16', 'R11', 'R10', 'R6', 'R5']
+  R6:
+    Path 1: cost=13, path=['R15', 'R13', 'R12', 'R11', 'R10', 'R6']
+  R7:
+    Path 1: cost=12, path=['R15', 'R13', 'R12', 'R11', 'R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=11, path=['R15', 'R13', 'R12', 'R11', 'R9', 'R8']
+    Path 2: cost=12, path=['R15', 'R17', 'R16', 'R11', 'R10', 'R8']
+  R9:
+    Path 1: cost=9, path=['R15', 'R13', 'R12', 'R11', 'R9']
+  R10:
+    Path 1: cost=9, path=['R15', 'R13', 'R12', 'R11', 'R10']
+  R11:
+    Path 1: cost=7, path=['R15', 'R13', 'R12', 'R11']
+    Path 2: cost=8, path=['R15', 'R17', 'R16', 'R11']
+  R12:
+    Path 1: cost=5, path=['R15', 'R13', 'R12']
+    Path 2: cost=5, path=['R15', 'R14', 'R12']
+  R13:
+    Path 1: cost=2, path=['R15', 'R13']
+  R14:
+    Path 1: cost=2, path=['R15', 'R14']
+  R16:
+    Path 1: cost=4, path=['R15', 'R17', 'R16']
+  R17:
+    Path 1: cost=2, path=['R15', 'R17']
+  R18:
+    Path 1: cost=4, path=['R15', 'R17', 'R18']
+  R19:
+    Path 1: cost=5, path=['R15', 'R17', 'R19']
+  R20:
+    Path 1: cost=6, path=['R15', 'R17', 'R18', 'R20']
+  R21:
+    Path 1: cost=8, path=['R15', 'R17', 'R18', 'R20', 'R21']
+  R22:
+    Path 1: cost=9, path=['R15', 'R17', 'R19', 'R22']
+  R23:
+    Path 1: cost=11, path=['R15', 'R17', 'R18', 'R20', 'R21', 'R23']
+  R24:
+    Path 1: cost=11, path=['R15', 'R17', 'R19', 'R22', 'R24']
+  R25:
+    Path 1: cost=11, path=['R15', 'R17', 'R18', 'R20', 'R25']
+  R26:
+    Path 1: cost=13, path=['R15', 'R17', 'R18', 'R20', 'R25', 'R26']
+  R27:
+    Path 1: cost=15, path=['R15', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=17, path=['R15', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=18, path=['R15', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=19, path=['R15', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28', 'R30']
+Router R16 LSDB:
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=16, path=['R16', 'R11', 'R10', 'R6', 'R3', 'R1']
+  R2:
+    Path 1: cost=14, path=['R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=14, path=['R16', 'R11', 'R10', 'R6', 'R3']
+  R4:
+    Path 1: cost=11, path=['R16', 'R11', 'R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=12, path=['R16', 'R11', 'R9', 'R8', 'R7', 'R5']
+  R6:
+    Path 1: cost=10, path=['R16', 'R11', 'R10', 'R6']
+  R7:
+    Path 1: cost=9, path=['R16', 'R11', 'R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=8, path=['R16', 'R11', 'R9', 'R8']
+  R9:
+    Path 1: cost=6, path=['R16', 'R11', 'R9']
+  R10:
+    Path 1: cost=6, path=['R16', 'R11', 'R10']
+  R11:
+    Path 1: cost=4, path=['R16', 'R11']
+  R12:
+    Path 1: cost=6, path=['R16', 'R13', 'R12']
+    Path 2: cost=6, path=['R16', 'R14', 'R12']
+    Path 3: cost=6, path=['R16', 'R11', 'R12']
+  R13:
+    Path 1: cost=3, path=['R16', 'R13']
+  R14:
+    Path 1: cost=3, path=['R16', 'R14']
+  R15:
+    Path 1: cost=4, path=['R16', 'R17', 'R15']
+  R17:
+    Path 1: cost=2, path=['R16', 'R17']
+  R18:
+    Path 1: cost=4, path=['R16', 'R17', 'R18']
+  R19:
+    Path 1: cost=5, path=['R16', 'R17', 'R19']
+  R20:
+    Path 1: cost=6, path=['R16', 'R17', 'R18', 'R20']
+  R21:
+    Path 1: cost=8, path=['R16', 'R17', 'R18', 'R20', 'R21']
+  R22:
+    Path 1: cost=9, path=['R16', 'R17', 'R19', 'R22']
+  R23:
+    Path 1: cost=11, path=['R16', 'R17', 'R18', 'R20', 'R21', 'R23']
+  R24:
+    Path 1: cost=11, path=['R16', 'R17', 'R19', 'R22', 'R24']
+  R25:
+    Path 1: cost=11, path=['R16', 'R17', 'R18', 'R20', 'R25']
+  R26:
+    Path 1: cost=13, path=['R16', 'R17', 'R18', 'R20', 'R25', 'R26']
+  R27:
+    Path 1: cost=15, path=['R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=17, path=['R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=18, path=['R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=19, path=['R16', 'R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28', 'R30']
+Router R17 LSDB:
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=18, path=['R17', 'R16', 'R11', 'R10', 'R6', 'R3', 'R1']
+    Path 2: cost=21, path=['R17', 'R15', 'R13', 'R12', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2', 'R1']
+  R2:
+    Path 1: cost=16, path=['R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=16, path=['R17', 'R16', 'R11', 'R10', 'R6', 'R3']
+    Path 2: cost=19, path=['R17', 'R15', 'R13', 'R12', 'R11', 'R9', 'R8', 'R7', 'R4', 'R3']
+  R4:
+    Path 1: cost=13, path=['R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=14, path=['R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R5']
+  R6:
+    Path 1: cost=12, path=['R17', 'R16', 'R11', 'R10', 'R6']
+  R7:
+    Path 1: cost=11, path=['R17', 'R16', 'R11', 'R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=10, path=['R17', 'R16', 'R11', 'R9', 'R8']
+  R9:
+    Path 1: cost=8, path=['R17', 'R16', 'R11', 'R9']
+  R10:
+    Path 1: cost=8, path=['R17', 'R16', 'R11', 'R10']
+  R11:
+    Path 1: cost=6, path=['R17', 'R16', 'R11']
+  R12:
+    Path 1: cost=7, path=['R17', 'R15', 'R13', 'R12']
+    Path 2: cost=8, path=['R17', 'R16', 'R14', 'R12']
+  R13:
+    Path 1: cost=4, path=['R17', 'R15', 'R13']
+  R14:
+    Path 1: cost=4, path=['R17', 'R15', 'R14']
+  R15:
+    Path 1: cost=2, path=['R17', 'R15']
+  R16:
+    Path 1: cost=2, path=['R17', 'R16']
+  R18:
+    Path 1: cost=2, path=['R17', 'R18']
+  R19:
+    Path 1: cost=3, path=['R17', 'R19']
+  R20:
+    Path 1: cost=4, path=['R17', 'R18', 'R20']
+  R21:
+    Path 1: cost=6, path=['R17', 'R18', 'R20', 'R21']
+  R22:
+    Path 1: cost=7, path=['R17', 'R19', 'R22']
+    Path 2: cost=8, path=['R17', 'R18', 'R20', 'R21', 'R22']
+  R23:
+    Path 1: cost=9, path=['R17', 'R18', 'R20', 'R21', 'R23']
+  R24:
+    Path 1: cost=9, path=['R17', 'R19', 'R22', 'R24']
+  R25:
+    Path 1: cost=9, path=['R17', 'R18', 'R20', 'R25']
+  R26:
+    Path 1: cost=11, path=['R17', 'R18', 'R20', 'R25', 'R26']
+    Path 2: cost=12, path=['R17', 'R19', 'R20', 'R21', 'R23', 'R26']
+  R27:
+    Path 1: cost=13, path=['R17', 'R18', 'R20', 'R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=15, path=['R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=16, path=['R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=17, path=['R17', 'R18', 'R20', 'R25', 'R26', 'R27', 'R28', 'R30']
+Router R18 LSDB:
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=20, path=['R18', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3', 'R1']
+  R2:
+    Path 1: cost=18, path=['R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=18, path=['R18', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3']
+  R4:
+    Path 1: cost=15, path=['R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=16, path=['R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R5']
+  R6:
+    Path 1: cost=14, path=['R18', 'R17', 'R16', 'R11', 'R10', 'R6']
+  R7:
+    Path 1: cost=13, path=['R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=12, path=['R18', 'R17', 'R16', 'R11', 'R9', 'R8']
+  R9:
+    Path 1: cost=10, path=['R18', 'R17', 'R16', 'R11', 'R9']
+  R10:
+    Path 1: cost=10, path=['R18', 'R17', 'R16', 'R11', 'R10']
+  R11:
+    Path 1: cost=8, path=['R18', 'R17', 'R16', 'R11']
+  R12:
+    Path 1: cost=9, path=['R18', 'R17', 'R15', 'R13', 'R12']
+  R13:
+    Path 1: cost=6, path=['R18', 'R17', 'R15', 'R13']
+  R14:
+    Path 1: cost=6, path=['R18', 'R17', 'R15', 'R14']
+  R15:
+    Path 1: cost=4, path=['R18', 'R17', 'R15']
+  R16:
+    Path 1: cost=4, path=['R18', 'R17', 'R16']
+  R17:
+    Path 1: cost=2, path=['R18', 'R17']
+  R19:
+    Path 1: cost=4, path=['R18', 'R20', 'R19']
+  R20:
+    Path 1: cost=2, path=['R18', 'R20']
+  R21:
+    Path 1: cost=4, path=['R18', 'R20', 'R21']
+  R22:
+    Path 1: cost=6, path=['R18', 'R20', 'R21', 'R22']
+  R23:
+    Path 1: cost=7, path=['R18', 'R20', 'R21', 'R23']
+  R24:
+    Path 1: cost=8, path=['R18', 'R20', 'R21', 'R22', 'R24']
+  R25:
+    Path 1: cost=7, path=['R18', 'R20', 'R25']
+  R26:
+    Path 1: cost=9, path=['R18', 'R20', 'R25', 'R26']
+  R27:
+    Path 1: cost=11, path=['R18', 'R20', 'R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=13, path=['R18', 'R20', 'R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=14, path=['R18', 'R20', 'R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=15, path=['R18', 'R20', 'R25', 'R26', 'R27', 'R28', 'R30']
+Router R19 LSDB:
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=21, path=['R19', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3', 'R1']
+  R2:
+    Path 1: cost=19, path=['R19', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=19, path=['R19', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3']
+  R4:
+    Path 1: cost=16, path=['R19', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=17, path=['R19', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R5']
+  R6:
+    Path 1: cost=15, path=['R19', 'R17', 'R16', 'R11', 'R10', 'R6']
+  R7:
+    Path 1: cost=14, path=['R19', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=13, path=['R19', 'R17', 'R16', 'R11', 'R9', 'R8']
+  R9:
+    Path 1: cost=11, path=['R19', 'R17', 'R16', 'R11', 'R9']
+  R10:
+    Path 1: cost=11, path=['R19', 'R17', 'R16', 'R11', 'R10']
+  R11:
+    Path 1: cost=9, path=['R19', 'R17', 'R16', 'R11']
+  R12:
+    Path 1: cost=10, path=['R19', 'R17', 'R15', 'R13', 'R12']
+  R13:
+    Path 1: cost=7, path=['R19', 'R17', 'R15', 'R13']
+  R14:
+    Path 1: cost=7, path=['R19', 'R17', 'R15', 'R14']
+  R15:
+    Path 1: cost=5, path=['R19', 'R17', 'R15']
+  R16:
+    Path 1: cost=5, path=['R19', 'R17', 'R16']
+  R17:
+    Path 1: cost=3, path=['R19', 'R17']
+  R18:
+    Path 1: cost=4, path=['R19', 'R20', 'R18']
+  R20:
+    Path 1: cost=2, path=['R19', 'R20']
+  R21:
+    Path 1: cost=4, path=['R19', 'R20', 'R21']
+  R22:
+    Path 1: cost=4, path=['R19', 'R22']
+  R23:
+    Path 1: cost=7, path=['R19', 'R20', 'R21', 'R23']
+    Path 2: cost=8, path=['R19', 'R22', 'R24', 'R23']
+  R24:
+    Path 1: cost=6, path=['R19', 'R22', 'R24']
+  R25:
+    Path 1: cost=7, path=['R19', 'R20', 'R25']
+  R26:
+    Path 1: cost=9, path=['R19', 'R20', 'R25', 'R26']
+    Path 2: cost=10, path=['R19', 'R22', 'R24', 'R23', 'R26']
+  R27:
+    Path 1: cost=11, path=['R19', 'R20', 'R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=13, path=['R19', 'R20', 'R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=14, path=['R19', 'R20', 'R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=15, path=['R19', 'R20', 'R25', 'R26', 'R27', 'R28', 'R30']
+Router R20 LSDB:
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=22, path=['R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3', 'R1']
+    Path 2: cost=26, path=['R20', 'R19', 'R17', 'R15', 'R13', 'R12', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2', 'R1']
+  R2:
+    Path 1: cost=20, path=['R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=20, path=['R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3']
+    Path 2: cost=24, path=['R20', 'R19', 'R17', 'R15', 'R13', 'R12', 'R11', 'R9', 'R8', 'R7', 'R4', 'R3']
+  R4:
+    Path 1: cost=17, path=['R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=18, path=['R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R5']
+  R6:
+    Path 1: cost=16, path=['R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6']
+  R7:
+    Path 1: cost=15, path=['R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=14, path=['R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8']
+  R9:
+    Path 1: cost=12, path=['R20', 'R18', 'R17', 'R16', 'R11', 'R9']
+  R10:
+    Path 1: cost=12, path=['R20', 'R18', 'R17', 'R16', 'R11', 'R10']
+  R11:
+    Path 1: cost=10, path=['R20', 'R18', 'R17', 'R16', 'R11']
+  R12:
+    Path 1: cost=11, path=['R20', 'R18', 'R17', 'R15', 'R13', 'R12']
+    Path 2: cost=13, path=['R20', 'R19', 'R17', 'R16', 'R14', 'R12']
+  R13:
+    Path 1: cost=8, path=['R20', 'R18', 'R17', 'R15', 'R13']
+  R14:
+    Path 1: cost=8, path=['R20', 'R18', 'R17', 'R15', 'R14']
+  R15:
+    Path 1: cost=6, path=['R20', 'R18', 'R17', 'R15']
+  R16:
+    Path 1: cost=6, path=['R20', 'R18', 'R17', 'R16']
+  R17:
+    Path 1: cost=4, path=['R20', 'R18', 'R17']
+  R18:
+    Path 1: cost=2, path=['R20', 'R18']
+  R19:
+    Path 1: cost=2, path=['R20', 'R19']
+  R21:
+    Path 1: cost=2, path=['R20', 'R21']
+  R22:
+    Path 1: cost=4, path=['R20', 'R21', 'R22']
+  R23:
+    Path 1: cost=5, path=['R20', 'R21', 'R23']
+  R24:
+    Path 1: cost=6, path=['R20', 'R21', 'R22', 'R24']
+  R25:
+    Path 1: cost=5, path=['R20', 'R25']
+  R26:
+    Path 1: cost=7, path=['R20', 'R25', 'R26']
+    Path 2: cost=7, path=['R20', 'R21', 'R23', 'R26']
+  R27:
+    Path 1: cost=9, path=['R20', 'R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=11, path=['R20', 'R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=12, path=['R20', 'R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=13, path=['R20', 'R25', 'R26', 'R27', 'R28', 'R30']
+Router R21 LSDB:
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=24, path=['R21', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3', 'R1']
+  R2:
+    Path 1: cost=22, path=['R21', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=22, path=['R21', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3']
+  R4:
+    Path 1: cost=19, path=['R21', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=20, path=['R21', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R5']
+  R6:
+    Path 1: cost=18, path=['R21', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6']
+  R7:
+    Path 1: cost=17, path=['R21', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=16, path=['R21', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8']
+  R9:
+    Path 1: cost=14, path=['R21', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9']
+  R10:
+    Path 1: cost=14, path=['R21', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10']
+  R11:
+    Path 1: cost=12, path=['R21', 'R20', 'R18', 'R17', 'R16', 'R11']
+  R12:
+    Path 1: cost=13, path=['R21', 'R20', 'R18', 'R17', 'R15', 'R13', 'R12']
+  R13:
+    Path 1: cost=10, path=['R21', 'R20', 'R18', 'R17', 'R15', 'R13']
+  R14:
+    Path 1: cost=10, path=['R21', 'R20', 'R18', 'R17', 'R15', 'R14']
+  R15:
+    Path 1: cost=8, path=['R21', 'R20', 'R18', 'R17', 'R15']
+  R16:
+    Path 1: cost=8, path=['R21', 'R20', 'R18', 'R17', 'R16']
+  R17:
+    Path 1: cost=6, path=['R21', 'R20', 'R18', 'R17']
+  R18:
+    Path 1: cost=4, path=['R21', 'R20', 'R18']
+  R19:
+    Path 1: cost=4, path=['R21', 'R20', 'R19']
+  R20:
+    Path 1: cost=2, path=['R21', 'R20']
+  R22:
+    Path 1: cost=2, path=['R21', 'R22']
+  R23:
+    Path 1: cost=3, path=['R21', 'R23']
+  R24:
+    Path 1: cost=4, path=['R21', 'R22', 'R24']
+  R25:
+    Path 1: cost=7, path=['R21', 'R20', 'R25']
+    Path 2: cost=7, path=['R21', 'R22', 'R24', 'R25']
+    Path 3: cost=7, path=['R21', 'R23', 'R26', 'R25']
+  R26:
+    Path 1: cost=5, path=['R21', 'R23', 'R26']
+  R27:
+    Path 1: cost=7, path=['R21', 'R23', 'R26', 'R27']
+  R28:
+    Path 1: cost=9, path=['R21', 'R23', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=10, path=['R21', 'R23', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=11, path=['R21', 'R23', 'R26', 'R27', 'R28', 'R30']
+Router R22 LSDB:
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=25, path=['R22', 'R19', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3', 'R1']
+    Path 2: cost=29, path=['R22', 'R21', 'R20', 'R18', 'R17', 'R15', 'R13', 'R12', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2', 'R1']
+  R2:
+    Path 1: cost=23, path=['R22', 'R19', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=23, path=['R22', 'R19', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3']
+    Path 2: cost=27, path=['R22', 'R21', 'R20', 'R18', 'R17', 'R15', 'R13', 'R12', 'R11', 'R9', 'R8', 'R7', 'R4', 'R3']
+  R4:
+    Path 1: cost=20, path=['R22', 'R19', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=21, path=['R22', 'R19', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R5']
+    Path 2: cost=25, path=['R22', 'R21', 'R20', 'R18', 'R17', 'R15', 'R13', 'R12', 'R11', 'R10', 'R6', 'R5']
+  R6:
+    Path 1: cost=19, path=['R22', 'R19', 'R17', 'R16', 'R11', 'R10', 'R6']
+  R7:
+    Path 1: cost=18, path=['R22', 'R19', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=17, path=['R22', 'R19', 'R17', 'R16', 'R11', 'R9', 'R8']
+  R9:
+    Path 1: cost=15, path=['R22', 'R19', 'R17', 'R16', 'R11', 'R9']
+  R10:
+    Path 1: cost=15, path=['R22', 'R19', 'R17', 'R16', 'R11', 'R10']
+  R11:
+    Path 1: cost=13, path=['R22', 'R19', 'R17', 'R16', 'R11']
+  R12:
+    Path 1: cost=14, path=['R22', 'R19', 'R17', 'R15', 'R13', 'R12']
+    Path 2: cost=16, path=['R22', 'R21', 'R20', 'R18', 'R17', 'R16', 'R14', 'R12']
+  R13:
+    Path 1: cost=11, path=['R22', 'R19', 'R17', 'R15', 'R13']
+    Path 2: cost=13, path=['R22', 'R21', 'R20', 'R18', 'R17', 'R16', 'R13']
+  R14:
+    Path 1: cost=11, path=['R22', 'R19', 'R17', 'R15', 'R14']
+    Path 2: cost=13, path=['R22', 'R21', 'R20', 'R18', 'R17', 'R16', 'R14']
+  R15:
+    Path 1: cost=9, path=['R22', 'R19', 'R17', 'R15']
+  R16:
+    Path 1: cost=9, path=['R22', 'R19', 'R17', 'R16']
+  R17:
+    Path 1: cost=7, path=['R22', 'R19', 'R17']
+    Path 2: cost=8, path=['R22', 'R21', 'R20', 'R18', 'R17']
+  R18:
+    Path 1: cost=6, path=['R22', 'R21', 'R20', 'R18']
+  R19:
+    Path 1: cost=4, path=['R22', 'R19']
+  R20:
+    Path 1: cost=4, path=['R22', 'R21', 'R20']
+  R21:
+    Path 1: cost=2, path=['R22', 'R21']
+  R23:
+    Path 1: cost=4, path=['R22', 'R24', 'R23']
+  R24:
+    Path 1: cost=2, path=['R22', 'R24']
+  R25:
+    Path 1: cost=5, path=['R22', 'R24', 'R25']
+  R26:
+    Path 1: cost=6, path=['R22', 'R24', 'R23', 'R26']
+  R27:
+    Path 1: cost=8, path=['R22', 'R24', 'R23', 'R26', 'R27']
+  R28:
+    Path 1: cost=10, path=['R22', 'R24', 'R23', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=11, path=['R22', 'R24', 'R23', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=12, path=['R22', 'R24', 'R23', 'R26', 'R27', 'R28', 'R30']
+Router R23 LSDB:
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=27, path=['R23', 'R21', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3', 'R1']
+    Path 2: cost=32, path=['R23', 'R24', 'R22', 'R19', 'R17', 'R15', 'R13', 'R12', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2', 'R1']
+  R2:
+    Path 1: cost=25, path=['R23', 'R21', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=25, path=['R23', 'R21', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3']
+    Path 2: cost=30, path=['R23', 'R24', 'R22', 'R19', 'R17', 'R15', 'R13', 'R12', 'R11', 'R9', 'R8', 'R7', 'R4', 'R3']
+  R4:
+    Path 1: cost=22, path=['R23', 'R21', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=23, path=['R23', 'R21', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R5']
+  R6:
+    Path 1: cost=21, path=['R23', 'R21', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6']
+  R7:
+    Path 1: cost=20, path=['R23', 'R21', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=19, path=['R23', 'R21', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8']
+  R9:
+    Path 1: cost=17, path=['R23', 'R21', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9']
+  R10:
+    Path 1: cost=17, path=['R23', 'R21', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10']
+  R11:
+    Path 1: cost=15, path=['R23', 'R21', 'R20', 'R18', 'R17', 'R16', 'R11']
+  R12:
+    Path 1: cost=16, path=['R23', 'R21', 'R20', 'R18', 'R17', 'R15', 'R13', 'R12']
+    Path 2: cost=19, path=['R23', 'R24', 'R22', 'R19', 'R17', 'R16', 'R14', 'R12']
+  R13:
+    Path 1: cost=13, path=['R23', 'R21', 'R20', 'R18', 'R17', 'R15', 'R13']
+  R14:
+    Path 1: cost=13, path=['R23', 'R21', 'R20', 'R18', 'R17', 'R15', 'R14']
+  R15:
+    Path 1: cost=11, path=['R23', 'R21', 'R20', 'R18', 'R17', 'R15']
+  R16:
+    Path 1: cost=11, path=['R23', 'R21', 'R20', 'R18', 'R17', 'R16']
+  R17:
+    Path 1: cost=9, path=['R23', 'R21', 'R20', 'R18', 'R17']
+  R18:
+    Path 1: cost=7, path=['R23', 'R21', 'R20', 'R18']
+  R19:
+    Path 1: cost=7, path=['R23', 'R21', 'R20', 'R19']
+    Path 2: cost=8, path=['R23', 'R24', 'R22', 'R19']
+  R20:
+    Path 1: cost=5, path=['R23', 'R21', 'R20']
+  R21:
+    Path 1: cost=3, path=['R23', 'R21']
+  R22:
+    Path 1: cost=4, path=['R23', 'R24', 'R22']
+  R24:
+    Path 1: cost=2, path=['R23', 'R24']
+  R25:
+    Path 1: cost=4, path=['R23', 'R26', 'R25']
+  R26:
+    Path 1: cost=2, path=['R23', 'R26']
+  R27:
+    Path 1: cost=4, path=['R23', 'R26', 'R27']
+  R28:
+    Path 1: cost=6, path=['R23', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=7, path=['R23', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=8, path=['R23', 'R26', 'R27', 'R28', 'R30']
+Router R24 LSDB:
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=27, path=['R24', 'R22', 'R19', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3', 'R1']
+    Path 2: cost=32, path=['R24', 'R23', 'R21', 'R20', 'R18', 'R17', 'R15', 'R13', 'R12', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2', 'R1']
+  R2:
+    Path 1: cost=25, path=['R24', 'R22', 'R19', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=25, path=['R24', 'R22', 'R19', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3']
+    Path 2: cost=30, path=['R24', 'R23', 'R21', 'R20', 'R18', 'R17', 'R15', 'R13', 'R12', 'R11', 'R9', 'R8', 'R7', 'R4', 'R3']
+  R4:
+    Path 1: cost=22, path=['R24', 'R22', 'R19', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=23, path=['R24', 'R22', 'R19', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R5']
+  R6:
+    Path 1: cost=21, path=['R24', 'R22', 'R19', 'R17', 'R16', 'R11', 'R10', 'R6']
+  R7:
+    Path 1: cost=20, path=['R24', 'R22', 'R19', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=19, path=['R24', 'R22', 'R19', 'R17', 'R16', 'R11', 'R9', 'R8']
+  R9:
+    Path 1: cost=17, path=['R24', 'R22', 'R19', 'R17', 'R16', 'R11', 'R9']
+  R10:
+    Path 1: cost=17, path=['R24', 'R22', 'R19', 'R17', 'R16', 'R11', 'R10']
+  R11:
+    Path 1: cost=15, path=['R24', 'R22', 'R19', 'R17', 'R16', 'R11']
+  R12:
+    Path 1: cost=16, path=['R24', 'R22', 'R19', 'R17', 'R15', 'R13', 'R12']
+    Path 2: cost=19, path=['R24', 'R23', 'R21', 'R20', 'R18', 'R17', 'R16', 'R14', 'R12']
+  R13:
+    Path 1: cost=13, path=['R24', 'R22', 'R19', 'R17', 'R15', 'R13']
+  R14:
+    Path 1: cost=13, path=['R24', 'R22', 'R19', 'R17', 'R15', 'R14']
+  R15:
+    Path 1: cost=11, path=['R24', 'R22', 'R19', 'R17', 'R15']
+  R16:
+    Path 1: cost=11, path=['R24', 'R22', 'R19', 'R17', 'R16']
+  R17:
+    Path 1: cost=9, path=['R24', 'R22', 'R19', 'R17']
+  R18:
+    Path 1: cost=8, path=['R24', 'R22', 'R21', 'R20', 'R18']
+  R19:
+    Path 1: cost=6, path=['R24', 'R22', 'R19']
+  R20:
+    Path 1: cost=6, path=['R24', 'R22', 'R21', 'R20']
+  R21:
+    Path 1: cost=4, path=['R24', 'R22', 'R21']
+  R22:
+    Path 1: cost=2, path=['R24', 'R22']
+  R23:
+    Path 1: cost=2, path=['R24', 'R23']
+  R25:
+    Path 1: cost=3, path=['R24', 'R25']
+  R26:
+    Path 1: cost=4, path=['R24', 'R23', 'R26']
+  R27:
+    Path 1: cost=6, path=['R24', 'R23', 'R26', 'R27']
+  R28:
+    Path 1: cost=8, path=['R24', 'R23', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=9, path=['R24', 'R23', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=10, path=['R24', 'R23', 'R26', 'R27', 'R28', 'R30']
+Router R25 LSDB:
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=27, path=['R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3', 'R1']
+  R2:
+    Path 1: cost=25, path=['R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=25, path=['R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3']
+  R4:
+    Path 1: cost=22, path=['R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=23, path=['R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R5']
+  R6:
+    Path 1: cost=21, path=['R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6']
+  R7:
+    Path 1: cost=20, path=['R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=19, path=['R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8']
+  R9:
+    Path 1: cost=17, path=['R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9']
+  R10:
+    Path 1: cost=17, path=['R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10']
+  R11:
+    Path 1: cost=15, path=['R25', 'R20', 'R18', 'R17', 'R16', 'R11']
+  R12:
+    Path 1: cost=16, path=['R25', 'R20', 'R18', 'R17', 'R15', 'R13', 'R12']
+  R13:
+    Path 1: cost=13, path=['R25', 'R20', 'R18', 'R17', 'R15', 'R13']
+  R14:
+    Path 1: cost=13, path=['R25', 'R20', 'R18', 'R17', 'R15', 'R14']
+  R15:
+    Path 1: cost=11, path=['R25', 'R20', 'R18', 'R17', 'R15']
+  R16:
+    Path 1: cost=11, path=['R25', 'R20', 'R18', 'R17', 'R16']
+  R17:
+    Path 1: cost=9, path=['R25', 'R20', 'R18', 'R17']
+  R18:
+    Path 1: cost=7, path=['R25', 'R20', 'R18']
+  R19:
+    Path 1: cost=7, path=['R25', 'R20', 'R19']
+  R20:
+    Path 1: cost=5, path=['R25', 'R20']
+  R21:
+    Path 1: cost=7, path=['R25', 'R26', 'R23', 'R21']
+    Path 2: cost=7, path=['R25', 'R20', 'R21']
+    Path 3: cost=7, path=['R25', 'R24', 'R22', 'R21']
+  R22:
+    Path 1: cost=5, path=['R25', 'R24', 'R22']
+  R23:
+    Path 1: cost=4, path=['R25', 'R26', 'R23']
+  R24:
+    Path 1: cost=3, path=['R25', 'R24']
+  R26:
+    Path 1: cost=2, path=['R25', 'R26']
+  R27:
+    Path 1: cost=4, path=['R25', 'R26', 'R27']
+  R28:
+    Path 1: cost=6, path=['R25', 'R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=7, path=['R25', 'R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=8, path=['R25', 'R26', 'R27', 'R28', 'R30']
+Router R26 LSDB:
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=29, path=['R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3', 'R1']
+    Path 2: cost=33, path=['R26', 'R23', 'R21', 'R20', 'R19', 'R17', 'R15', 'R13', 'R12', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2', 'R1']
+  R2:
+    Path 1: cost=27, path=['R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=27, path=['R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3']
+    Path 2: cost=31, path=['R26', 'R23', 'R21', 'R20', 'R19', 'R17', 'R15', 'R13', 'R12', 'R11', 'R9', 'R8', 'R7', 'R4', 'R3']
+  R4:
+    Path 1: cost=24, path=['R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=25, path=['R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R5']
+    Path 2: cost=29, path=['R26', 'R23', 'R21', 'R20', 'R19', 'R17', 'R15', 'R13', 'R12', 'R11', 'R10', 'R6', 'R5']
+  R6:
+    Path 1: cost=23, path=['R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6']
+  R7:
+    Path 1: cost=22, path=['R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=21, path=['R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8']
+    Path 2: cost=25, path=['R26', 'R23', 'R21', 'R20', 'R19', 'R17', 'R15', 'R13', 'R12', 'R11', 'R10', 'R8']
+  R9:
+    Path 1: cost=19, path=['R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9']
+  R10:
+    Path 1: cost=19, path=['R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10']
+  R11:
+    Path 1: cost=17, path=['R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11']
+  R12:
+    Path 1: cost=18, path=['R26', 'R25', 'R20', 'R18', 'R17', 'R15', 'R13', 'R12']
+    Path 2: cost=20, path=['R26', 'R23', 'R21', 'R20', 'R19', 'R17', 'R16', 'R14', 'R12']
+  R13:
+    Path 1: cost=15, path=['R26', 'R25', 'R20', 'R18', 'R17', 'R15', 'R13']
+    Path 2: cost=17, path=['R26', 'R23', 'R21', 'R20', 'R19', 'R17', 'R16', 'R13']
+  R14:
+    Path 1: cost=15, path=['R26', 'R25', 'R20', 'R18', 'R17', 'R15', 'R14']
+    Path 2: cost=17, path=['R26', 'R23', 'R21', 'R20', 'R19', 'R17', 'R16', 'R14']
+  R15:
+    Path 1: cost=13, path=['R26', 'R25', 'R20', 'R18', 'R17', 'R15']
+  R16:
+    Path 1: cost=13, path=['R26', 'R25', 'R20', 'R18', 'R17', 'R16']
+  R17:
+    Path 1: cost=11, path=['R26', 'R25', 'R20', 'R18', 'R17']
+    Path 2: cost=12, path=['R26', 'R23', 'R21', 'R20', 'R19', 'R17']
+  R18:
+    Path 1: cost=9, path=['R26', 'R25', 'R20', 'R18']
+  R19:
+    Path 1: cost=9, path=['R26', 'R25', 'R20', 'R19']
+    Path 2: cost=10, path=['R26', 'R23', 'R24', 'R22', 'R19']
+  R20:
+    Path 1: cost=7, path=['R26', 'R25', 'R20']
+    Path 2: cost=7, path=['R26', 'R23', 'R21', 'R20']
+  R21:
+    Path 1: cost=5, path=['R26', 'R23', 'R21']
+  R22:
+    Path 1: cost=6, path=['R26', 'R23', 'R24', 'R22']
+  R23:
+    Path 1: cost=2, path=['R26', 'R23']
+  R24:
+    Path 1: cost=4, path=['R26', 'R23', 'R24']
+  R25:
+    Path 1: cost=2, path=['R26', 'R25']
+  R27:
+    Path 1: cost=2, path=['R26', 'R27']
+  R28:
+    Path 1: cost=4, path=['R26', 'R27', 'R28']
+  R29:
+    Path 1: cost=5, path=['R26', 'R27', 'R29']
+  R30:
+    Path 1: cost=6, path=['R26', 'R27', 'R28', 'R30']
+Router R27 LSDB:
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=31, path=['R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3', 'R1']
+  R2:
+    Path 1: cost=29, path=['R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=29, path=['R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3']
+  R4:
+    Path 1: cost=26, path=['R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=27, path=['R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R5']
+  R6:
+    Path 1: cost=25, path=['R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6']
+  R7:
+    Path 1: cost=24, path=['R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=23, path=['R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8']
+  R9:
+    Path 1: cost=21, path=['R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9']
+  R10:
+    Path 1: cost=21, path=['R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10']
+  R11:
+    Path 1: cost=19, path=['R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11']
+  R12:
+    Path 1: cost=20, path=['R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R15', 'R13', 'R12']
+  R13:
+    Path 1: cost=17, path=['R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R15', 'R13']
+  R14:
+    Path 1: cost=17, path=['R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R15', 'R14']
+  R15:
+    Path 1: cost=15, path=['R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R15']
+  R16:
+    Path 1: cost=15, path=['R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16']
+  R17:
+    Path 1: cost=13, path=['R27', 'R26', 'R25', 'R20', 'R18', 'R17']
+  R18:
+    Path 1: cost=11, path=['R27', 'R26', 'R25', 'R20', 'R18']
+  R19:
+    Path 1: cost=11, path=['R27', 'R26', 'R25', 'R20', 'R19']
+  R20:
+    Path 1: cost=9, path=['R27', 'R26', 'R25', 'R20']
+  R21:
+    Path 1: cost=7, path=['R27', 'R26', 'R23', 'R21']
+  R22:
+    Path 1: cost=8, path=['R27', 'R26', 'R23', 'R24', 'R22']
+  R23:
+    Path 1: cost=4, path=['R27', 'R26', 'R23']
+  R24:
+    Path 1: cost=6, path=['R27', 'R26', 'R23', 'R24']
+  R25:
+    Path 1: cost=4, path=['R27', 'R26', 'R25']
+  R26:
+    Path 1: cost=2, path=['R27', 'R26']
+  R28:
+    Path 1: cost=2, path=['R27', 'R28']
+  R29:
+    Path 1: cost=3, path=['R27', 'R29']
+  R30:
+    Path 1: cost=4, path=['R27', 'R28', 'R30']
+Router R28 LSDB:
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=33, path=['R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3', 'R1']
+  R2:
+    Path 1: cost=31, path=['R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=31, path=['R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3']
+  R4:
+    Path 1: cost=28, path=['R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=29, path=['R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R5']
+  R6:
+    Path 1: cost=27, path=['R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6']
+  R7:
+    Path 1: cost=26, path=['R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=25, path=['R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8']
+  R9:
+    Path 1: cost=23, path=['R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9']
+  R10:
+    Path 1: cost=23, path=['R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10']
+  R11:
+    Path 1: cost=21, path=['R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11']
+  R12:
+    Path 1: cost=22, path=['R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R15', 'R13', 'R12']
+  R13:
+    Path 1: cost=19, path=['R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R15', 'R13']
+  R14:
+    Path 1: cost=19, path=['R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R15', 'R14']
+  R15:
+    Path 1: cost=17, path=['R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R15']
+  R16:
+    Path 1: cost=17, path=['R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16']
+  R17:
+    Path 1: cost=15, path=['R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17']
+  R18:
+    Path 1: cost=13, path=['R28', 'R27', 'R26', 'R25', 'R20', 'R18']
+  R19:
+    Path 1: cost=13, path=['R28', 'R27', 'R26', 'R25', 'R20', 'R19']
+  R20:
+    Path 1: cost=11, path=['R28', 'R27', 'R26', 'R25', 'R20']
+  R21:
+    Path 1: cost=9, path=['R28', 'R27', 'R26', 'R23', 'R21']
+  R22:
+    Path 1: cost=10, path=['R28', 'R27', 'R26', 'R23', 'R24', 'R22']
+  R23:
+    Path 1: cost=6, path=['R28', 'R27', 'R26', 'R23']
+  R24:
+    Path 1: cost=8, path=['R28', 'R27', 'R26', 'R23', 'R24']
+  R25:
+    Path 1: cost=6, path=['R28', 'R27', 'R26', 'R25']
+  R26:
+    Path 1: cost=4, path=['R28', 'R27', 'R26']
+  R27:
+    Path 1: cost=2, path=['R28', 'R27']
+  R29:
+    Path 1: cost=4, path=['R28', 'R30', 'R29']
+  R30:
+    Path 1: cost=2, path=['R28', 'R30']
+Router R29 LSDB:
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=34, path=['R29', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3', 'R1']
+  R2:
+    Path 1: cost=32, path=['R29', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=32, path=['R29', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3']
+  R4:
+    Path 1: cost=29, path=['R29', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=30, path=['R29', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R5']
+  R6:
+    Path 1: cost=28, path=['R29', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6']
+  R7:
+    Path 1: cost=27, path=['R29', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=26, path=['R29', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8']
+  R9:
+    Path 1: cost=24, path=['R29', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9']
+  R10:
+    Path 1: cost=24, path=['R29', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10']
+  R11:
+    Path 1: cost=22, path=['R29', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11']
+  R12:
+    Path 1: cost=23, path=['R29', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R15', 'R13', 'R12']
+  R13:
+    Path 1: cost=20, path=['R29', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R15', 'R13']
+  R14:
+    Path 1: cost=20, path=['R29', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R15', 'R14']
+  R15:
+    Path 1: cost=18, path=['R29', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R15']
+  R16:
+    Path 1: cost=18, path=['R29', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16']
+  R17:
+    Path 1: cost=16, path=['R29', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17']
+  R18:
+    Path 1: cost=14, path=['R29', 'R27', 'R26', 'R25', 'R20', 'R18']
+  R19:
+    Path 1: cost=14, path=['R29', 'R27', 'R26', 'R25', 'R20', 'R19']
+  R20:
+    Path 1: cost=12, path=['R29', 'R27', 'R26', 'R25', 'R20']
+  R21:
+    Path 1: cost=10, path=['R29', 'R27', 'R26', 'R23', 'R21']
+  R22:
+    Path 1: cost=11, path=['R29', 'R27', 'R26', 'R23', 'R24', 'R22']
+  R23:
+    Path 1: cost=7, path=['R29', 'R27', 'R26', 'R23']
+  R24:
+    Path 1: cost=9, path=['R29', 'R27', 'R26', 'R23', 'R24']
+  R25:
+    Path 1: cost=7, path=['R29', 'R27', 'R26', 'R25']
+  R26:
+    Path 1: cost=5, path=['R29', 'R27', 'R26']
+  R27:
+    Path 1: cost=3, path=['R29', 'R27']
+  R28:
+    Path 1: cost=4, path=['R29', 'R30', 'R28']
+  R30:
+    Path 1: cost=2, path=['R29', 'R30']
+Router R30 LSDB:
+  R28: {'origin': 'R28', 'sequence': 1, 'neighbors': {'R27': 2, 'R30': 2}}
+  R29: {'origin': 'R29', 'sequence': 1, 'neighbors': {'R27': 3, 'R30': 2}}
+  R27: {'origin': 'R27', 'sequence': 1, 'neighbors': {'R26': 2, 'R28': 2, 'R29': 3}}
+  R30: {'origin': 'R30', 'sequence': 1, 'neighbors': {'R28': 2, 'R29': 2}}
+  R26: {'origin': 'R26', 'sequence': 1, 'neighbors': {'R23': 2, 'R25': 2, 'R27': 2}}
+  R23: {'origin': 'R23', 'sequence': 1, 'neighbors': {'R21': 3, 'R24': 2, 'R26': 2}}
+  R25: {'origin': 'R25', 'sequence': 1, 'neighbors': {'R24': 3, 'R26': 2, 'R20': 5}}
+  R21: {'origin': 'R21', 'sequence': 1, 'neighbors': {'R20': 2, 'R22': 2, 'R23': 3}}
+  R24: {'origin': 'R24', 'sequence': 1, 'neighbors': {'R22': 2, 'R23': 2, 'R25': 3}}
+  R20: {'origin': 'R20', 'sequence': 1, 'neighbors': {'R18': 2, 'R19': 2, 'R21': 2, 'R25': 5}}
+  R22: {'origin': 'R22', 'sequence': 1, 'neighbors': {'R21': 2, 'R24': 2, 'R19': 4}}
+  R18: {'origin': 'R18', 'sequence': 1, 'neighbors': {'R17': 2, 'R20': 2}}
+  R19: {'origin': 'R19', 'sequence': 1, 'neighbors': {'R17': 3, 'R20': 2, 'R22': 4}}
+  R17: {'origin': 'R17', 'sequence': 1, 'neighbors': {'R15': 2, 'R16': 2, 'R18': 2, 'R19': 3}}
+  R15: {'origin': 'R15', 'sequence': 1, 'neighbors': {'R13': 2, 'R14': 2, 'R17': 2}}
+  R16: {'origin': 'R16', 'sequence': 1, 'neighbors': {'R11': 4, 'R17': 2, 'R14': 3, 'R13': 3}}
+  R13: {'origin': 'R13', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R14: {'origin': 'R14', 'sequence': 1, 'neighbors': {'R12': 3, 'R15': 2, 'R16': 3}}
+  R12: {'origin': 'R12', 'sequence': 1, 'neighbors': {'R11': 2, 'R13': 3, 'R14': 3}}
+  R11: {'origin': 'R11', 'sequence': 1, 'neighbors': {'R9': 2, 'R10': 2, 'R12': 2, 'R16': 4}}
+  R9: {'origin': 'R9', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R10': 1}}
+  R10: {'origin': 'R10', 'sequence': 1, 'neighbors': {'R8': 2, 'R11': 2, 'R9': 1, 'R6': 4}}
+  R8: {'origin': 'R8', 'sequence': 1, 'neighbors': {'R7': 1, 'R9': 2, 'R10': 2}}
+  R7: {'origin': 'R7', 'sequence': 1, 'neighbors': {'R4': 2, 'R5': 3, 'R6': 3, 'R8': 1}}
+  R4: {'origin': 'R4', 'sequence': 1, 'neighbors': {'R2': 3, 'R3': 3, 'R7': 2}}
+  R5: {'origin': 'R5', 'sequence': 1, 'neighbors': {'R2': 4, 'R7': 3, 'R6': 2, 'R1': 5}}
+  R6: {'origin': 'R6', 'sequence': 1, 'neighbors': {'R3': 4, 'R7': 3, 'R5': 2, 'R10': 4}}
+  R2: {'origin': 'R2', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R5': 4}}
+  R3: {'origin': 'R3', 'sequence': 1, 'neighbors': {'R1': 2, 'R4': 3, 'R6': 4}}
+  R1: {'origin': 'R1', 'sequence': 1, 'neighbors': {'R2': 2, 'R3': 2, 'R5': 5}}
+Disjoint Multi-Path Forwarding (DMPF) Paths:
+  R1:
+    Path 1: cost=35, path=['R30', 'R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3', 'R1']
+  R2:
+    Path 1: cost=33, path=['R30', 'R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4', 'R2']
+  R3:
+    Path 1: cost=33, path=['R30', 'R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6', 'R3']
+  R4:
+    Path 1: cost=30, path=['R30', 'R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R4']
+  R5:
+    Path 1: cost=31, path=['R30', 'R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7', 'R5']
+  R6:
+    Path 1: cost=29, path=['R30', 'R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10', 'R6']
+  R7:
+    Path 1: cost=28, path=['R30', 'R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8', 'R7']
+  R8:
+    Path 1: cost=27, path=['R30', 'R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9', 'R8']
+  R9:
+    Path 1: cost=25, path=['R30', 'R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R9']
+  R10:
+    Path 1: cost=25, path=['R30', 'R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11', 'R10']
+  R11:
+    Path 1: cost=23, path=['R30', 'R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16', 'R11']
+  R12:
+    Path 1: cost=24, path=['R30', 'R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R15', 'R13', 'R12']
+  R13:
+    Path 1: cost=21, path=['R30', 'R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R15', 'R13']
+  R14:
+    Path 1: cost=21, path=['R30', 'R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R15', 'R14']
+  R15:
+    Path 1: cost=19, path=['R30', 'R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R15']
+  R16:
+    Path 1: cost=19, path=['R30', 'R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17', 'R16']
+  R17:
+    Path 1: cost=17, path=['R30', 'R28', 'R27', 'R26', 'R25', 'R20', 'R18', 'R17']
+  R18:
+    Path 1: cost=15, path=['R30', 'R28', 'R27', 'R26', 'R25', 'R20', 'R18']
+  R19:
+    Path 1: cost=15, path=['R30', 'R28', 'R27', 'R26', 'R25', 'R20', 'R19']
+  R20:
+    Path 1: cost=13, path=['R30', 'R28', 'R27', 'R26', 'R25', 'R20']
+  R21:
+    Path 1: cost=11, path=['R30', 'R28', 'R27', 'R26', 'R23', 'R21']
+  R22:
+    Path 1: cost=12, path=['R30', 'R28', 'R27', 'R26', 'R23', 'R24', 'R22']
+  R23:
+    Path 1: cost=8, path=['R30', 'R28', 'R27', 'R26', 'R23']
+  R24:
+    Path 1: cost=10, path=['R30', 'R28', 'R27', 'R26', 'R23', 'R24']
+  R25:
+    Path 1: cost=8, path=['R30', 'R28', 'R27', 'R26', 'R25']
+  R26:
+    Path 1: cost=6, path=['R30', 'R28', 'R27', 'R26']
+  R27:
+    Path 1: cost=4, path=['R30', 'R28', 'R27']
+  R28:
+    Path 1: cost=2, path=['R30', 'R28']
+  R29:
+    Path 1: cost=2, path=['R30', 'R29']
