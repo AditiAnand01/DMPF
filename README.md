@@ -22,6 +22,7 @@ The simulation is designed to work with a custom network topology defined in JSO
 ```
 .
 ├── main.py                  # Entry point for running the routing simulations
+├── analysis.py              # Gives comparative numerical analysis for Simulation
 ├── topology.json            # Network topology in JSON format
 ├── protocols/
 │   ├── ospf.py              # OSPF protocol implementation
