@@ -52,3 +52,17 @@ By default, the simulation uses `topology.json` in the root directory. To use a 
 ```bash
 python main.py --protocol DMPF --topology custom_topology.json
 ```
+
+## Simulation Results (Comparative Numerical Analysis)
+
+| Metric                     | OSPF     | ECMP     | DMPF     | BEST                         |
+|----------------------------|----------|----------|----------|----------------------------- |
+| Normalized Traffic Load    | 141.1183 | 141.0104 | 127.4570 | **DMPF** (lower better)      |
+| Bandwidth Utilization ratio| 3.6574   | 3.6561   | 3.3001   | **DMPF** (lower better)      |
+| Failure Impact             | 0.1051   | 0.1039   | 0.1039   | **ECMP/DMPF** (lower better) |
+| Bottleneck Freq            | 0.0414   | 0.0416   | 0.0456   | **OSPF/ECMP/DMPF** (lower better) |
+| Max Utilization            | 298.4700 | 297.7900 | 291.981  | **DMPF** (lower better)      |
+| Min Utilization            | 100.0000 | 100.0000 | 68.3223  | **OSPF/ECMP** (higher better)|
+| Entropy                    | 4.1582   | 4.1608   | 4.2808   | **DMPF** (higher better)     |
+| Packet Loss                | 105.0600 | 103.9000 | 103.8653 | **DMPF** (lower better)      |
+
