@@ -67,3 +67,6 @@ python main.py --protocol DMPF --topology custom_topology.json
 | Entropy                    | 4.1582   | 4.1608   | 4.2808   | **DMPF** (higher better)     |
 | Packet Loss                | 105.0600 | 103.9000 | 103.8653 | **DMPF** (lower better)      |
 
+## Traffic Distribution 
+![My Image](traffic_distribution.png)
+
