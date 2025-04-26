@@ -5,9 +5,9 @@ import random
 import time
 from collections import defaultdict, Counter
 import matplotlib.pyplot as plt
-from ospf import Router, flood_lsa, build_routing_table
-import ecmp
-import dmpf
+from protocols.ospf import Router, flood_lsa, build_routing_table
+import protocols.ecmp
+import protocols.dmpf
 
 # ---------------------- CONFIGURATION ----------------------
 NUM_TOPOLOGIES = 1000 
