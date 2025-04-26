@@ -31,7 +31,6 @@ The simulation is designed to work with a custom network topology defined in JSO
 ├── utils/
 │   ├── topology_loader.py   # Helper module for loading and parsing topology JSON
 │   └── visualize.py         # (Optional) Topology visualization
-├── evaluate.py              # Script to evaluate and compare routing protocol performance
 ├── paths/
 │   ├── ospf_paths.csv       # Computed paths using OSPF
 │   ├── ecmp_paths.csv       # Computed paths using ECMP
