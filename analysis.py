@@ -9,14 +9,14 @@ from protocols.ospf import Router, flood_lsa, build_routing_table
 import protocols.ecmp
 import protocols.dmpf
 
-# ---------------------- CONFIGURATION ----------------------
+# Configuration
 NUM_TOPOLOGIES = 1000 
 NUM_ITERATIONS = 10
 NUM_SRC_DST_PER_ITER = 10  #25
 NUM_PACKETS = 100
 BOTTLENECK_THRESHOLD_MULTIPLIER = 2
 
-# ---------------------- ROUTING ALGORITHMS ----------------------
+# routing algorithm
 def ospf_paths(G, src, dst):
     from collections import defaultdict
 
@@ -77,28 +77,28 @@ def ecmp_paths(G, src, dst):
     return [routers[src].routing_table[dst]] if dst in routers[src].routing_table else []
 
 def dmpf_paths(G, src, dst, k=3, delta=20):
-    # Step 1: Extract topology from NetworkX graph
+    # Extract topology from NetworkX graph
     topology = {
         'routers': list(G.nodes),
         'links': [(u, v, G[u][v]['delay']) for u, v in G.edges]
     }
 
-    # Step 2: Initialize routers and their neighbors
+    # Initialize routers and their neighbors
     routers = {rid: dmpf.Router(rid) for rid in topology['routers']}
     for r1, r2, cost in topology['links']:
         routers[r1].neighbors[r2] = cost
         routers[r2].neighbors[r1] = cost
 
-    # Step 3: Run DMPF convergence to simulate LSA flooding
+    # Run DMPF convergence to simulate LSA flooding
     dmpf.converge_network(routers)
 
-    # Step 4: Check if destination is reachable in the LSDB
+    # Check if destination is reachable in the LSDB
     if dst not in routers[src].neighbors and dst not in routers[src].lsdb:
         print(f"[Routing Table Missing] {src} → {dst}: Destination not in neighbors or LSDB.")
         return []
 
     try:
-        # Step 5: Compute disjoint paths
+        # Compute disjoint paths
         results = dmpf.compute_dmpf_paths(routers[src].lsdb, src, dst, k, delta)
     except Exception as e:
         print(f"[Exception] DMPF path computation from {src} to {dst} failed: {e}")
@@ -108,12 +108,12 @@ def dmpf_paths(G, src, dst, k=3, delta=20):
         print(f"[Empty Result] DMPF path computation from {src} to {dst} returned no paths.")
         return []
 
-    # Step 6: Extract only the path sequences
+    # Extract only the path sequences
     paths = [path for path, cost in results]
     return paths
 
 
-# ---------------------- TOPOLOGY GENERATOR ----------------------
+# topology generator
 def generate_random_topology():
     while True:
         choice = random.choice(["grid", "erdos", "powerlaw", "tree"])
@@ -135,7 +135,7 @@ def generate_random_topology():
         G[u][v]['delay'] = random.randint(1, 1000)
     return G
 
-# ---------------------- METRIC CALCULATOR ----------------------
+# calculate metrics
 def compute_new_metrics(G, paths, failed_edge=None):
     edge_usage = Counter()
     packets_lost = 0
@@ -203,7 +203,7 @@ def compute_new_metrics(G, paths, failed_edge=None):
     }
 
 
-# ---------------------- MAIN EVALUATION LOOP ----------------------
+# main evaluation
 def evaluate_algorithms():
     final_results = defaultdict(lambda: defaultdict(list))
 
@@ -250,6 +250,6 @@ def evaluate_algorithms():
             print(f"  {k}: {np.mean(vals):.4f}")
         print("----------------------")
 
-# ---------------------- RUN ----------------------
+
 if __name__ == "__main__":
     evaluate_algorithms()
