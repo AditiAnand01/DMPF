@@ -6,6 +6,8 @@ This repository contains implementations of three routing protocols and their ev
 
 The simulation is designed to work with a custom network topology defined in JSON format, and includes tools for evaluating link utilization, fairness, and other metrics.
 
+The OSPF-ECMP routing, widely used in modern networks, is limited by its strict requirement that all selected paths must have identical costs. This constraint significantly reduces path diversity, leading to underutilization of available network resources and potential congestion on critical links, even when slightly longer but viable alternative paths exist. To address these limitations, we designed the **Disjoint Multi-Path Forwarding (DMPF) protocol**, which enables unequal-cost multipath routing by considering paths within a configurable threshold (δ) of the shortest path cost. The protocol computes candidate paths using Dijkstra’s algorithm and selects up to *k edge-disjoint paths* through a greedy strategy, ensuring both efficiency and fault tolerance. Additionally, DMPF employs weighted load balancing to distribute traffic proportionally based on path costs, resulting in improved bandwidth utilization and better load distribution.
+
 
 ## Features
 
